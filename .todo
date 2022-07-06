@@ -1,0 +1,98 @@
+// Deployment & Services 
+✔ Track the app @done(19-11-24 00:08)
+✔ Push the application to Github @done(19-11-24 00:08)
+✔ Link the Github repo to Netlify @done(19-11-24 00:09)
+✔ Obtain a domain name @done(19-11-24 12:31)
+✔ Link the domain name to the Netlify deploy @done(19-11-24 12:31)
+✔ Add a Google analytics token @done(19-11-24 12:38)
+✔ Obtain HTTPS @done(19-11-24 13:08)
+✔ Create a Trello  for keeping track of tasks -> Github Project @done(19-11-24 13:11)
+
+// Mapping related stuff
+✔ Extract the mapping code in a specific library @done(19-11-24 11:49)
+✔ Extract the mapbox token in env variables @done(19-11-24 12:10)
+✔ Make the search work only in the area of interest @done(19-11-24 22:09)
+✔ Block the navigation to the specific neighborhood @done(19-11-24 22:09)
+
+// Layout related stuff
+✔ Create a CTA popup and link it to the about page @done(19-11-24 00:51)
+✔ See why there is a space to the left @done(19-11-24 11:55)
+✔ Add favicon @done(19-11-24 17:37)
+✔ Structure correctly the information on the input page @done(19-11-24 17:37)
+✔ Make the app fit correctly in the page @done(19-11-24 17:37)
+✔ Create the content of the Output page @done(19-11-24 17:37)
+✔ Create the contact page @done(19-11-24 21:35)
+✔ Manage the navigation between all pages @done(19-11-24 21:35)
+
+// Logic related stuff
+✔ Extract the values of the filters in the URL of the app @done(19-11-24 21:35)
+✔ Create mock functions and reuse the content in the @done(19-11-24 23:12)
+
+//Todo 25.11.2019
+✔ Change image @done(19-11-25 20:22)
+✔ Add the correct layer containing the computed areas @done(19-11-25 20:22)
+✔ Zoom to building upon selection @done(19-11-25 20:38)
+✔ Show the modal only upon the first visit @done(19-11-25 21:01)
+✔ Extract building height off layer and fill in the input @done(19-11-25 21:15)
+✔ Remove selection when closing the popup / set input value to O @done(19-11-25 22:50)
+✔ Increase the visibility of the popup @done(19-11-25 22:50)
+✔ Validate inputs @done(19-12-01 00:58)
+✔ Make call to API and render results @done(19-12-01 00:58)
+✔ Link the code with the server side code @done(20-01-05 20:49)
+
+//Output page
+✔ Add a new page with the stats @done(20-01-07 22:12)
+    ✔ Include in the stats the page views @done(20-01-07 22:12)
+    ✔ Include in the stats the users @done(20-01-07 22:12)
+    ✔ Include in the stats the users distribution @done(20-01-07 22:12)
+    ✔ Include an uptime indicator @done(20-01-07 22:12)
+
+//App state
+✔ Keep the state of the inputs when going back @done(20-01-07 22:44)
+
+//Change some texts 
+✔ How much water do you consume at home per day? to How much water do you consume at home per day per person? J'ai une amie qui dit que ce n'est pas clair @done(20-01-11 22:38)
+✔ Cange l/c/d -> l/d/p @done(20-01-11 22:38)
+✔ Add logos on the about page @done(20-01-11 23:07)
+
+//Gifs
+✔ Make the transition between the 2 gifs be slower @done(20-01-07 23:22)
+✔ Make logo link to homepage @done(20-01-12 15:39)
+✔ Add buttons on map @done(20-01-12 16:29)
+✔ Change the website font to a nicer one @done(20-01-12 16:44)
+✔ Make the modals be scrollable themelves instead of augmenting the pages @done(20-01-12 16:50)
+✔ Add all logic in a single file @done(20-01-12 17:40)
+✔ Include a generic loader @done(20-01-12 18:28)
+✔ Provide a div that needs to be inserted when results are done / Use @done(20-01-12 18:28)
+✔ Check how to inset the grafic again @done(20-01-12 18:59)
+✔ Add message for when the optimum is not found @done(20-01-12 22:16)
+✔ Add a message for when there was an error on the page @done(20-01-12 22:16)
+
+☐ Beautify the code
+☐ Check how to get the overflow
+☐ Use JQquery instead of simple JS for some manipulations
+☐ Check for some nicer themes for Bootstrap
+
+//Functionality
+☐ share on networks
+☐ print results -> https://react-pdf.org/repl / https://gist.github.com/fcingolani/3300351
+
+// Tomorrow -> Styles
+☐ Improve the arrows that make the transition
+☐ Make info graphs show better on mobile
+☐ Revisit the sizes of the different pages on smaller devices
+
+//Refactorings
+☐ Rewrite the app to use React
+☐ After React -> Render waiting time with a nice animated loader (https://rive.app/a/SamadiPour/files/flare/liquid-loader/preview)
+☐ Extract texts to some backoffice to help with content management
+☐ Update the loading animation to actually use the app logo
+☐ Add a message for when the page was accessed without query params
+☐ Simplify CSS
+
+//Not necessary now
+☐ Store also the map state
+☐ Link the data to the graph
+☐ Add sentry to track errors on the server
+
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153212172-1"></script>
+        
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-153212172-1');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Let's talk water</title>
+        <link rel="shortcut icon" type="image/png" href="./assets/favicon.png"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
+        
+        <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    
+        <link href="./css/style.css" rel="stylesheet" />
+    
+        <!-- Include D3 for dataviz-->
+        <script src="https://d3js.org/d3.v4.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
+    
+    </head>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary ">
+    <a class="navbar-brand site-logo" href="index.html">
+        <img src="./assets/logo_new.svg" width="32" height="32" class="d-inline-block align-top" alt="">
+    </a>
+    <a class="navbar-brand site-name" href="index.html">LET'S TALK WATER</a>
+    <span class="navbar-brand site-separator">/</span>
+    <span class="navbar-brand site-location">Location: Mambalam, Chennai, India</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mr-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    About
+                </button>
+            </li> 
+            <li class="nav-item mr-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assumptionsModal">
+                    <i class="material-icons">info</i> Assumptions
+                </button>
+            </li>
+            <li class="nav-item ml-1">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">language</i> En
+                    </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">En</a>
+                            <a class="dropdown-item" href="#">தமிழ்</a>
+                            <a class="dropdown-item" href="#">हिन्दी</a>
+                        </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container fill d-flex flex-column">
+            <div class="container-fluid mt-4">
+                <b><h3>👀 Page Views</h3></b>
+                <div class="card">
+                    <iframe width="100%" height="450" src="https://datastudio.google.com/embed/reporting/39690963-1eb8-4b32-88b9-990335f828df/page/K8jAB" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="container-fluid mt-4">
+                <b><h3>😀 Users</h3></b>
+                <div class="card">
+                    <iframe  width="100%" height="450" src="https://datastudio.google.com/embed/reporting/454bccb5-32c8-43a2-b038-fd85bc2f9307/page/K8jAB" frameborder="0"></iframe>
+                </div>         
+            </div>
+            <div class="container-fluid mt-4">
+                <b><h3>🌏 User distribution</h3></b>
+                <div class="card">
+                    <iframe width="100%" height="450" src="https://datastudio.google.com/embed/reporting/fd1299b6-1f05-4cad-a14c-71fb6cedde51/page/K8jAB" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>       
+            </div>
+            <div class="container-fluid my-5">
+                <b><h3>🚨 Uptime</h3></b>
+                <div class="card">
+                    <iframe width="100%" height="650" src="https://statuspage.freshping.io/20915-LetsTalkWater" frameborder="0"></iframe>
+                </div>
+            </div>
+</div>
+
+<!-- About Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalTitle">Welcome to Let’s Talk Water Tool!</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>
+                This is a rooftop rainwater harvesting calculator which provides you with information about the 
+                potential of rainwater harvesting (RWH) for your specific building to avoid water shortage in the 
+                summer and become water-sufficient. Most of the rainwater can be collected during the monsoon 
+                season and store for later usage. Be part of the ‘Water heroes’ movement in Chennai and start 
+                saving water! 
+            </p>
+            <p>
+                This tool is inspired by the effort of Shanta Sheela Nair, 
+                known as the water woman in Chennai who made RWH an important solution 
+                to cope with Chennai’s recurrent water crisis. 
+            </p>
+            <p>
+               <b>Credits :</b> 
+            </p>
+            <div class="container-fluid my-3">
+                <img src="./assets/tu-delft-2.png" height="100" alt="">
+                <img src="./assets/tu-delft.png" height="100" alt="">
+                <img src="./assets/wal.jpg" height="100" alt="">
+                <img src="./assets/iit-madras.png" height="100" alt="">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button id="closeModal" type="button" class="btn btn-primary" data-dismiss="modal">Let's start <i class="material-icons">arrow_forward</i></button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Assumptions Modal -->
+
+<div class="modal fade" id="assumptionsModal" tabindex="-1" role="dialog" aria-labelledby="assumptionsModalTitle" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="assumptionsModalTitle">Assumptions and notes</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <ol type="1">
+                <li>Daily rainfall data sourced from Indian Meteorological Department (IMD).</li>
+                <li>Actual rainwater collection is assumed at 75% of potential by considering runoff co-efficient, first flush, filter efficiency, etc.</li>
+                <li>The process calculation is based on the urban water balance model and does not take into account the evaporation factor as
+                        rainwater collected from the rooftop is assumed to drain directly in the underground sump.</li>
+                <li>The RWH recommendations are based on the highest probability of occurrence over 46 years of historical rainfall data.</li>
+                <li>Underground sump capacity suggested is the optimum size from the given roof and number of residents of the building.</li>
+                <li>Groundwaterrechargewell capacity suggested considered the daily overflow volume from the underground tank.</li>
+                <li>The implementation of rooftop RWH system for household water supply requires a watertreatmentsystem for drinking water and
+                        cooking, first flush system, filter chamber, piping and overhead tank.</li>
+                <li>It is advisable to test periodically the quality of rainwater in the underground sump.</li>
+                <li>This tool is for residential buildings, apartments and individual houses with a flat roof.</li>
+                <li>Daily water consumption per person for Chennai varies between 40l/d/c to 135l/d/c.</li>
+                <li>List of RWH Contractors, Entrepreneurs, Agencies, Equipmentsuppliers, Manufacturers and any Organizations listed in this tool are
+                        from the public domain information and are not the recommended/endorsed list of their capabilities/authenticity/financial
+                        transactions.</li>
+            </ol>
+        </div>
+        <div class="modal-footer">
+          <button id="closeModal" type="button" class="btn btn-primary" data-dismiss="modal">I understand</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>

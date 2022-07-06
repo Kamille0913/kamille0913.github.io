@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153212172-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-153212172-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's talk water</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
+    
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary ">
+    <a class="navbar-brand site-logo" href="index.html">
+        <img src="./assets/logo_new.svg" width="32" height="32" class="d-inline-block align-top" alt="">
+    </a>
+    <a class="navbar-brand site-name" href="index.html">LET'S TALK WATER</a>
+    <span class="navbar-brand site-separator">/</span>
+    <span class="navbar-brand site-location">Location: Mambalam, Chennai, India</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mr-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    About
+                </button>
+            </li> 
+            <li class="nav-item mr-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assumptionsModal">
+                    <i class="material-icons">info</i> Assumptions
+                </button>
+            </li>
+            <li class="nav-item ml-1">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">language</i> En
+                    </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">En</a>
+                            <a class="dropdown-item" href="#">தமிழ்</a>
+                            <a class="dropdown-item" href="#">हिन्दी</a>
+                        </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Input page Content -->
+
+<div class="container-fluid fill">
+    <div class="row gr">
+        <div class="col-lg-6 colone">
+            <div id="map"></div>
+        </div>
+        <div class="col-lg-6 coltwo">
+            <div class="container-fluid my-4 text-center"> 
+                <h3 class="my-3"><i class="material-icons md-36 strong-color">search</i>  Find your building on the map</h3>
+            </div>
+             <hr/>
+             <div class="text-center my-lg-4 mx-lg-3">
+                <h1><i class="material-icons md-40 strong-color">apartment</i>  Your building</h1>
+             </div>
+                    <form action="./output.html" class="mx-lg-3 px-lg-3 mx-5">
+                        <div class="form-group row my-3">
+                            <label for="roofArea" class="col-sm-7 col-form-label"><i class="material-icons main-color" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="If you do not know, input your largest floor area. ">info</i>  What is your rooftop area?</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input type="number" id="roofArea" name="roof" min="1" class="form-control"  placeholder="Rooftop area" required="true">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">ft<sup>2</sup></span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row my-3">
+                            <label for="nbResidents" class="col-sm-7 col-form-label"><i class="material-icons main-color" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Count everyone not only your family members">info</i>  How many residents are living in your building?</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input type="number" id="nbResidents" name="persons" min="1" max="250" class="form-control" placeholder="Nr. of residents" required="top">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">persons</span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row my-3">
+                            <label for="waterDemand" class="col-sm-7 col-form-label"><i class="material-icons main-color" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="If the value is unknown, it is suggested to use 100l/c/d which is eq. to 0.1m3/c/d (incl. drinking, cooking, washing and toilet flushing)">info</i>  How much water do you consume at home per day per person?</label>
+                            <div class="col-sm-5">
+                                    <div class="input-group">
+                                            <input type="number" id="waterDemand" min="1" name="consumption" class="form-control" placeholder="Water demand" required="true" value="100" >
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">l/p/d</span>
+                                                </div>
+                                    </div>    
+                            </div>
+                        </div>
+                        <div class="form-group row my-3">
+                            <label for="rainfall" class="col-sm-7 col-form-label"> Average Annual rainfall in your area</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input type="number" id="rainfall" name="rainfall" class="form-control" placeholder="Water demand" value="1394" readonly>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">mm/yr</span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row my-3">
+                            <label for="rainydays" class="col-sm-7 col-form-label"> Average number of rainy days in your area</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input type="number" id="rainydays" name="rainydays" class="form-control" placeholder="Water demand" value="95" readonly>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">d/yr</span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid my-5">
+                                <button type="submit" class="btn btn-lg btn-primary float-right">
+                                    Check results!
+                                </button>
+                        </div>
+                </form>
+    </div>
+</div>
+</div>
+
+<!-- About Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalTitle">Welcome to Let’s Talk Water Tool!</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This is a rooftop rainwater harvesting calculator which provides you with information about the 
+                    potential of rainwater harvesting (RWH) for your specific building to avoid water shortage in the 
+                    summer and become water-sufficient. Most of the rainwater can be collected during the monsoon 
+                    season and store for later usage. Be part of the ‘Water heroes’ movement in Chennai and start 
+                    saving water! 
+                </p>
+                <p>
+                    This tool is inspired by the effort of Shanta Sheela Nair, 
+                    known as the water woman in Chennai who made RWH an important solution 
+                    to cope with Chennai’s recurrent water crisis. 
+                </p>
+                <p>
+                   <b>Credits :</b> 
+                </p>
+                <div class="container-fluid my-3">
+                    <img src="./assets/tu-delft-2.png" height="100" alt="">
+                    <img src="./assets/tu-delft.png" height="100" alt="">
+                    <img src="./assets/wal.jpg" height="100" alt="">
+                    <img src="./assets/iit-madras.png" height="100" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button id="closeModal" type="button" class="btn btn-primary" data-dismiss="modal">Let's start <i class="material-icons">arrow_forward</i></button>
+            </div>
+          </div>
+        </div>
+</div>
+
+<!-- Assumptions Modal -->
+
+<div class="modal fade" id="assumptionsModal" tabindex="-1" role="dialog" aria-labelledby="assumptionsModalTitle" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="assumptionsModalTitle">Assumptions and notes</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <ol type="1">
+                    <li>Daily rainfall data sourced from Indian Meteorological Department (IMD).</li>
+                    <li>Actual rainwater collection is assumed at 75% of potential by considering runoff co-efficient, first flush, filter efficiency, etc.</li>
+                    <li>The process calculation is based on the urban water balance model and does not take into account the evaporation factor as
+                            rainwater collected from the rooftop is assumed to drain directly in the underground sump.</li>
+                    <li>The RWH recommendations are based on the highest probability of occurrence over 46 years of historical rainfall data.</li>
+                    <li>Underground sump capacity suggested is the optimum size from the given roof and number of residents of the building.</li>
+                    <li>Groundwaterrechargewell capacity suggested considered the daily overflow volume from the underground tank.</li>
+                    <li>The implementation of rooftop RWH system for household water supply requires a watertreatmentsystem for drinking water and
+                            cooking, first flush system, filter chamber, piping and overhead tank.</li>
+                    <li>It is advisable to test periodically the quality of rainwater in the underground sump.</li>
+                    <li>This tool is for residential buildings, apartments and individual houses with a flat roof.</li>
+                    <li>Daily water consumption per person for Chennai varies between 40l/d/c to 135l/d/c.</li>
+                    <li>List of RWH Contractors, Entrepreneurs, Agencies, Equipmentsuppliers, Manufacturers and any Organizations listed in this tool are
+                            from the public domain information and are not the recommended/endorsed list of their capabilities/authenticity/financial
+                            transactions.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+              <button id="closeModal" type="button" class="btn btn-primary" data-dismiss="modal">I understand</button>
+            </div>
+          </div>
+        </div>
+</div>
+    <script id="popup-template" type="text/html">
+        <div id="popup" class="mt-3 mb-2">
+            <h5> Rooftop area: {{area}} ft<sup>2</sup></h5>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="./js/appLogic.js"> </script>
+    <script src="./js/mapLogic.js"> </script>
+</body>
+</html>
