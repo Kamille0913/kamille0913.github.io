@@ -54,6 +54,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item mr-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#supplierModal">
+                    Suppliers
+                </button>
+            </li> 
+            <li class="nav-item mr-1">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     About
                 </button>
@@ -229,6 +234,32 @@
                     <li>List of RWH Contractors, Entrepreneurs, Agencies, Equipmentsuppliers, Manufacturers and any Organizations listed in this tool are
                             from the public domain information and are not the recommended/endorsed list of their capabilities/authenticity/financial
                             transactions.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+              <button id="closeModal" type="button" class="btn btn-primary" data-dismiss="modal">I understand</button>
+            </div>
+          </div>
+        </div>
+</div>
+<!-- Suppliers Modal -->
+
+<div class="modal fade" id="supplierModal" tabindex="-1" role="dialog" aria-labelledby="supplierModalTitle" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="supplierModalTitle">Some fake suppliers:</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <ol type="1">
+                    <li>Supplier info #1</li>
+                    <li>Supplier info #2</li>
+                    <li>Supplier info #3</li>
+                    <li>Supplier info #4</li>
                 </ol>
             </div>
             <div class="modal-footer">
